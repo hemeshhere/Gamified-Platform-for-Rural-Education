@@ -90,15 +90,15 @@ io.on("connection", (socket) => {
 
 // ROUTES IMPORT
 
-const AuthController = require('./controllers/AuthController');
-const LessonsController = require('./controllers/LessonsController');
-const ProgressController = require('./controllers/ProgressController');
-const XpController = require('./controllers/XpController');
-const QuizController = require('./controllers/QuizController');
-const NotificationsController = require('./controllers/NotificationsController');
-const SyncController = require('./controllers/SyncController');
+const AuthController = require('./controllers/authController');
+const LessonsController = require('./controllers/lessonController');
+const ProgressController = require('./controllers/progressController');
+const XpController = require('./controllers/xpController');
+const QuizController = require('./controllers/quizController');
+const NotificationsController = require('./controllers/notificationController');
+const SyncController = require('./controllers/syncController');
 const UserController = require("./controllers/userController");
-const ChatController = require("./controllers/ChatController");
+const ChatController = require("./controllers/chatController");
 
 // ROUTES REGISTER
 

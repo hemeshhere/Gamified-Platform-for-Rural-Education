@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const ChatMessage = require("../models/chat");
-const User = require("../models/userModel");
+const User = require("../models/user");
 const { requireAuth } = require("../middlewares/authMiddleware");
 
 // GET TEACHERS LIST (for students)

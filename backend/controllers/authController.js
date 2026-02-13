@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const User = require('../models/user');
 const RefreshToken = require('../models/refreshToken');
+const { requireAuth } = require("../middlewares/authMiddleware");
 const bcrypt = require("bcrypt");
 
 function signAccess(user){
