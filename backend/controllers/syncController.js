@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Progress = require('../models/progressModel');
-const User = require('../models/userModel');
+const Progress = require('../models/progress');
+const User = require('../models/user');
 const { requireAuth } = require('../middlewares/authMiddleware');
 
 // POST /api/sync

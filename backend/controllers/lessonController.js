@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Lesson = require('../models/lessonModel');
+const Lesson = require('../models/lesson');
 const { requireAuth, requireRole } = require('../middlewares/authMiddleware');
 
 // CREATE LESSON (teacher/admin)

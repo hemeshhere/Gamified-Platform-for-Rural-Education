@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
-const User = require('../models/userModel');
-const RefreshToken = require('../models/RefreshTokenModel');
+const User = require('../models/user');
+const RefreshToken = require('../models/refreshToken');
 const bcrypt = require("bcrypt");
 
 function signAccess(user){

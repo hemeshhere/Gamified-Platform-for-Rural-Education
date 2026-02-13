@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const Notification = require("../models/notificationModel");
-const User = require("../models/userModel");   // ✅ REQUIRED FIX
-const emailService = require("../services/emailServices");
+const Notification = require("../models/notification");
+const User = require("../models/user");  
+const emailService = require("../services/emailService");
 const { requireAuth, requireRole } = require("../middlewares/authMiddleware");
 
 // SEND NOTIFICATION (Teacher/Admin only)

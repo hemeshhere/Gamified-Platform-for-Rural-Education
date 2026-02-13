@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const Progress = require('../models/progressModel');
-const User = require('../models/userModel');
-const Lesson = require('../models/lessonModel');
+const Progress = require('../models/progress');
+const User = require('../models/user');
+const Lesson = require('../models/lesson');
 const { requireAuth } = require('../middlewares/authMiddleware');
 const { requireRole } = require('../middlewares/rolesMiddleware');
 const { calculateLevel } = require('../utils/xpUtils');

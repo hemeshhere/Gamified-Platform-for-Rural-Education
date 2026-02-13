@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const Quiz = require('../models/quizModel');
-const Attempt = require('../models/attemptModel');
-const Progress = require('../models/progressModel');
-const User = require('../models/userModel');
+const Quiz = require('../models/quiz');
+const Attempt = require('../models/attempt');
+const Progress = require('../models/progress');
+const User = require('../models/user');
 const { requireAuth } = require('../middlewares/authMiddleware');
 const { requireRole } = require('../middlewares/rolesMiddleware');
 const { QUIZ_MAX_XP } = require('../utils/xpUtils');

@@ -1,6 +1,6 @@
-const Badge = require('../models/badgeModel');
-const Progress = require('../models/progressModel');
-const Notification = require('../models/notificationModel');
+const Badge = require('../models/badge');
+const Progress = require('../models/progress');
+const Notification = require('../models/notification');
 
 module.exports.checkAndAwardBadges = async (studentId, context = {}) => {
   const prog = await Progress.findOne({ student: studentId });
