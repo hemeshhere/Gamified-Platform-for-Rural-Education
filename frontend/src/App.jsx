@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ChangePassword from "./pages/ChangePassword";
 
-function App() {
-  const [count, setCount] = useState(0)
+import ProtectedRoute from "./components/common/ProtectedRoute";
+import ProtectedElement from "./components/common/ProtectedElement";
+import RoleRedirect from "./components/common/RoleRedirect";
 
+// Auth
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import GlobalLoader from "./components/common/GlobalLoader";
+
+// Student Pages
+import StudentDashboard from "./pages/StudentDashboard";
+import LessonsList from "./components/lessons/LessonsList";
+import LessonViewer from "./components/lessons/LessonViewer";
+import NotificationsPage from "./pages/NotificationsPage";
+import ProgressPage from "./pages/ProgressPage";
+import BadgeGallery from "./pages/BadgeGallery";
+import QuizList from "./components/quiz/QuizList";
+import QuizAttempt from "./components/quiz/QuizAttempt";
+
+// Chat (Student)
+import StudentChatList from "./pages/StudentChatList";
+import ChatRoom from "./pages/ChatScreen";
+
+// Teacher Pages
+import TeacherDashboard from "./pages/TeacherDashboard";
+import LessonUpload from "./pages/LessonUpload";
+import QuizCreate from "./pages/QuizCreate";
+import TeacherAddXP from "./pages/TeacherAddXP";
+import TeacherSendNotification from "./pages/TeacherSendNotification";
+import TeacherManageContent from "./pages/TeacherManageContent";
+import TeacherStudentList from "./pages/TeacherStudentList";
+import TeacherChatList from "./pages/TeacherChatList";
+
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <BrowserRouter>
+      <GlobalLoader />
 
-export default App
+      <Routes>
+
+        {/* PUBLIC ROUTES */}
+        <Route path="/landing" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+      </Routes>
+    </BrowserRouter>
+  );
+}
