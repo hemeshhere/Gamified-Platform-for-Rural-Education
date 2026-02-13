@@ -15,7 +15,7 @@ import GlobalLoader from "./components/common/GlobalLoader";
 
 // Student Pages
 import StudentDashboard from "./pages/StudentDashboard";
-import LessonsList from "./components/lessons/LessonsList";
+import LessonsList from "./components/lessons/LessonList";
 import LessonViewer from "./components/lessons/LessonViewer";
 import NotificationsPage from "./pages/NotificationsPage";
 import ProgressPage from "./pages/ProgressPage";
