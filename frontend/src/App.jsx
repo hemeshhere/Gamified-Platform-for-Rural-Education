@@ -6,6 +6,7 @@ import ProtectedElement from "./components/common/ProtectedElement";
 import RoleRedirect from "./components/common/RoleRedirect";
 
 // Auth
+import Landing from "./pages/Landing";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import GlobalLoader from "./components/common/GlobalLoader";
@@ -45,6 +46,49 @@ export default function App() {
         <Route path="/landing" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+        {/* ROOT REDIRECT */}
+        <Route
+          path="/"
+          element={
+            <ProtectedElement>
+              <RoleRedirect />
+            </ProtectedElement>
+          }
+        />
+
+        {/*  STUDENT ROUTES  */}
+        <Route element={<ProtectedRoute allowedRoles={["student"]} />}>
+          <Route path="/student" element={<StudentDashboard />} />
+          <Route path="/lessons" element={<LessonsList />} />
+          <Route path="/lessons/:id" element={<LessonViewer />} />
+          <Route path="/quiz" element={<QuizList />} />
+          <Route path="/quiz/:quizId" element={<QuizAttempt />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/progress" element={<ProgressPage />} />
+          <Route path="/badges" element={<BadgeGallery />} />
+          <Route path="/change-password" element={<ChangePassword />} />
+
+          {/* Student Chat */}
+          <Route path="/student/chat" element={<StudentChatList />} />
+          <Route path="/student/chat/:teacherId" element={<ChatRoom />} />
+        </Route>
+
+        {/*  TEACHER ROUTES  */}
+        <Route element={<ProtectedRoute allowedRoles={["teacher", "admin"]} />}>
+          <Route path="/teacher" element={<TeacherDashboard />} />
+          <Route path="/teacher/create-lesson" element={<LessonUpload />} />
+          <Route path="/teacher/create-quiz" element={<QuizCreate />} />
+          <Route path="/teacher/add-xp" element={<TeacherAddXP />} />
+          <Route path="/teacher/send-notification" element={<TeacherSendNotification />} />
+          <Route path="/teacher/manage" element={<TeacherManageContent />} />
+          <Route path="/teacher/students" element={<TeacherStudentList />} />
+          <Route path="/change-password" element={<ChangePassword />} />
+
+          {/* Teacher Chat */}
+          <Route path="/teacher/chat" element={<TeacherChatList />} />
+          <Route path="/teacher/chat/:studentId" element={<ChatRoom />} />
+        </Route>
 
       </Routes>
     </BrowserRouter>
