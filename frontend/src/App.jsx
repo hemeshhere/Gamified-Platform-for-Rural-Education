@@ -1,3 +1,5 @@
+// App.jsx (FIXED)
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ChangePassword from "./pages/ChangePassword";
 
