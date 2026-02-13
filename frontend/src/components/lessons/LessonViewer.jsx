@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import api from "../../api/axios";
 import Navbar from "../common/Navbar";
-import XPPopup from "../common/XPPopup";
+import XPPopup from "../common/XpPopup";
 import { motion } from "framer-motion";
 import { FiBookOpen, FiStar } from "react-icons/fi";
 

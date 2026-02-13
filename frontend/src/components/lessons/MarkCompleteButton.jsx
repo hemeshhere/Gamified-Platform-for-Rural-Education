@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import api from "../../api/axios";
-import XPPopup from "../common/XPPopup";
-import BadgePopup from "../common/BadgePopup";
+import XPPopup from "../common/XpPopup";
 import { useQueryClient } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 
